@@ -1,0 +1,845 @@
+/* ============================================
+   PARTIE 1 – LES COULEURS DU SITE
+   
+   Au lieu d'écrire #00ff99 partout,
+   on crée des noms de couleurs ici.
+   Ensuite on écrit var(--vert) dans le CSS.
+   Si on veut changer le vert → on modifie
+   juste cette ligne et tout le site change !
+============================================ */
+:root {
+    --vert       : #00ff99;
+    --vert-clair : #00e5b0;
+    --noir       : #000000;
+    --noir-doux  : #0b0f19;
+    --gris-fonce : #1a1a1a;
+    --gris-carte : #1e293b;
+    --gris-texte : #aaaaaa;
+    --blanc      : #ffffff;
+    --rouge      : red;
+    --bordure    : #333333;
+}
+ 
+ 
+/* ============================================
+   PARTIE 2 – STYLE DE BASE DE TOUTE LA PAGE
+============================================ */
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    background-color: var(--noir);
+    color: var(--blanc);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    line-height: 1.6;
+}
+ 
+ 
+/* ============================================
+   PARTIE 3 – LA BARRE DE NAVIGATION (en haut)
+   
+   C'est le header avec le logo + les 3 liens.
+   position: sticky = elle reste visible
+   quand on fait défiler la page vers le bas.
+============================================ */
+ 
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 60px;
+    background-color: #1f1a1a;
+    border-bottom: 2px solid var(--vert);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+ 
+.logo {
+    color: var(--vert);
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.logo-icone-fa {
+    color: var(--vert);
+    font-size: 28px;
+}
+ 
+nav a {
+    color: var(--gris-texte);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+ 
+nav a:hover,
+nav a.actif {
+    color: var(--vert-clair);
+}
+ 
+ 
+/* ============================================
+   PARTIE 4 – SECTION INTRODUCTION (Accueil)
+   
+   Le grand titre + texte de présentation
+   en haut de la page d'accueil.
+============================================ */
+.intro {
+    padding: 80px 100px 60px;
+    background: linear-gradient(135deg, #000000 60%, #0b1a12 100%);
+}
+ 
+.intro h1 {
+    color: var(--blanc);
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+ 
+.intro p {
+    font-size: 18px;
+    color: #cccccc;
+    max-width: 650px;
+}
+ 
+ 
+/* ============================================
+   PARTIE 5 – LES CHIFFRES CLÉS (+500, 99,9%...)
+   
+   4 blocs côte à côte sur fond bleuté.
+============================================ */
+ 
+.point {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 20px;
+    background: var(--noir-doux);
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+ 
+.point-box {
+    width: 200px;
+}
+ 
+.point-box .icone {
+    font-size: 36px;
+    color: var(--vert-clair);
+    margin-bottom: 14px;
+    margin-left: 90px;
+}
+ 
+.point-box h2 {
+    font-size: 38px;
+    color: var(--vert);
+    text-shadow: 0 0 10px var(--vert);
+    margin: 8px 0;
+}
+ 
+.point-box p {
+    font-size: 16px;
+    color: var(--blanc);
+}
+ 
+ 
+/* ============================================
+   PARTIE 6 – POURQUOI NOUS CHOISIR
+   
+   Titre centré + 4 cartes avec icônes.
+============================================ */
+ 
+.pourquoi {
+    padding: 60px 40px;
+}
+ 
+.choix h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+ 
+.choix p {
+    text-align: center;
+    font-size: 17px;
+    color: var(--gris-texte);
+    margin-bottom: 40px;
+}
+ 
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+ 
+.card {
+    background-color: var(--gris-carte);
+    padding: 24px;
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 229, 176, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+ 
+.card:hover {
+    background-color: #243447;
+    transform: translateY(-4px);
+}
+ 
+.icone2 {
+    font-size: 32px;
+    color: var(--vert-clair);
+    margin-bottom: 14px;
+}
+ 
+.card h2 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: var(--vert-clair);
+}
+ 
+.card p {
+    font-size: 14px;
+    color: var(--gris-texte);
+}
+ 
+ 
+/* ============================================
+   PARTIE 7 – MENACES ACTUELLES (Accueil)
+   
+   4 cartes en 2 colonnes sur fond très sombre.
+============================================ */
+ 
+.menaces {
+    padding: 70px 50px;
+    background: #050b12;
+}
+ 
+.titre-menaces {
+    text-align: center;
+    margin-bottom: 45px;
+}
+ 
+.titre-menaces h2 {
+    font-size: 32px;
+    color: var(--vert);
+    margin-bottom: 15px;
+}
+ 
+.titre-menaces p {
+    color: var(--gris-texte);
+    max-width: 700px;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.7;
+}
+ 
+.grille-menaces {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+ 
+.carte-menace {
+    background: var(--gris-fonce);
+    border: 1px solid #222;
+    padding: 28px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+ 
+.carte-menace:hover {
+    transform: translateY(-6px);
+    border-color: var(--vert);
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+}
+ 
+.icone-menace {
+    width: 65px;
+    height: 65px;
+    background: rgba(0, 255, 153, 0.08);
+    border: 1px solid var(--vert);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: var(--vert);
+    margin-bottom: 20px;
+}
+ 
+.carte-menace h3 {
+    color: var(--blanc);
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+ 
+.carte-menace p {
+    color: var(--gris-texte);
+    line-height: 1.7;
+}
+ 
+ 
+/* ============================================
+   PARTIE 8 – CALL TO ACTION (Accueil)
+   
+   Section avec 2 boutons pour inciter
+   le visiteur à contacter ou explorer.
+============================================ */
+ 
+.partie3 {
+    text-align: center;
+    padding: 70px 40px;
+    background: var(--noir-doux);
+}
+ 
+.partie3 h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+ 
+.partie3 p {
+    font-size: 18px;
+    color: var(--gris-texte);
+    margin-bottom: 32px;
+}
+ 
+.cta-boutons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+ 
+.btn-principal {
+    background-color: var(--vert);
+    color: #000;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+.btn-principal:hover {
+    background-color: var(--vert-clair);
+}
+ 
+.btn-secondaire {
+    background-color: transparent;
+    color: var(--vert);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 4px;
+    border: 2px solid var(--vert);
+    font-size: 15px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+.btn-secondaire:hover {
+    background-color: rgba(0, 255, 153, 0.1);
+}
+ 
+ 
+/* ============================================
+   PARTIE 9 – BANNIÈRE PAGE SERVICES
+   
+   Le grand titre en haut de la page services.
+============================================ */
+.serve {
+    padding: 60px 40px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #000000 60%, #0b1a12 100%);
+}
+ 
+.serve h1 {
+    font-size: 36px;
+    color: var(--vert);
+    margin-bottom: 16px;
+}
+ 
+.serve p {
+    font-size: 17px;
+    color: var(--gris-texte);
+}
+ 
+ 
+/* ============================================
+   PARTIE 10 – GRILLE DES SERVICES
+   
+   6 cartes en 2 colonnes.
+   Chaque carte : image + titre + liste + prix + bouton.
+============================================ */
+ 
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+.cardservice {
+    background-color: var(--gris-fonce);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--bordure);
+    transition: border-color 0.3s, transform 0.3s;
+}
+ 
+.cardservice:hover {
+    border-color: var(--vert-clair);
+    transform: translateY(-4px);
+}
+ 
+.icone-titre {
+    color: var(--vert-clair);
+    margin-right: 8px;
+    font-size: 18px;
+}
+ 
+.cardservice h2 {
+    font-size: 20px;
+    color: var(--vert-clair);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+ 
+.cardservice p {
+    font-size: 14px;
+    color: var(--gris-texte);
+    margin-bottom: 14px;
+}
+ 
+.cardservice ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+ 
+.cardservice ul li {
+    font-size: 13px;
+    color: #cccccc;
+    padding: 4px 0;
+}
+ 
+.cardservice ul li::before {
+    content: "✓ ";
+    color: var(--vert-clair);
+    font-weight: bold;
+}
+ 
+.cardservice hr {
+    border: none;
+    border-top: 1px solid var(--bordure);
+    margin-bottom: 14px;
+}
+ 
+.pied {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.petit-texte {
+    font-size: 11px;
+    color: var(--gris-texte);
+}
+ 
+.prix {
+    color: var(--vert-clair);
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+.bouton {
+    background-color: var(--vert-clair);
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+ 
+.bouton:hover {
+    background-color: var(--vert);
+}
+ 
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+ 
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+ 
+.cardservice:hover .card-image img {
+    transform: scale(1.05);
+}
+ 
+.card-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, #1a1a1a, transparent);
+}
+ 
+ 
+/* ============================================
+   PARTIE 11 – FORMULAIRE DE CONTACT
+   
+   La colonne gauche de la page contact :
+   les champs de saisie et le bouton d'envoi.
+============================================ */
+ 
+/* Les deux colonnes côte à côte */
+.page {
+    display: flex;
+    gap: 24px;
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;                  /* empilées sur petit écran */
+}
+ 
+/* La colonne gauche : le formulaire */
+.formulaire {
+    background-color: var(--gris-fonce);
+    border: 1px solid var(--bordure);
+    padding: 28px;
+    width: 400px;
+    flex-shrink: 0;                   /* ne rétrécit pas */
+    border-radius: 8px;
+}
+ 
+/* Le titre du formulaire */
+.formulaire h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--vert-clair);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+/* Chaque groupe : label + champ */
+.groupe {
+    margin-bottom: 16px;
+}
+ 
+/* Le label au-dessus du champ */
+.groupe label {
+    display: block;                   /* occupe toute la largeur */
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #cccccc;
+}
+ 
+/* L'icône verte dans le label */
+.icone-label {
+    color: var(--vert-clair);
+    margin-right: 4px;
+    font-size: 12px;
+}
+ 
+/* L'étoile rouge * pour les champs obligatoires */
+.groupe label span {
+    color: var(--rouge);
+}
+ 
+/* Les champs de saisie, listes déroulantes et zones de texte */
+.groupe input,
+.groupe select,
+.groupe textarea {
+    width: 100%;
+    background-color: #111111;
+    border: 1px solid #444444;
+    color: var(--blanc);
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+ 
+/* La bordure devient verte quand on clique sur le champ */
+.groupe input:focus,
+.groupe select:focus,
+.groupe textarea:focus {
+    outline: none;                    /* supprime le contour bleu du navigateur */
+    border-color: var(--vert-clair);  /* remplace par une bordure verte */
+}
+ 
+/* La zone de texte pour le message */
+.groupe textarea {
+    height: 110px;
+    resize: vertical;                 /* peut être agrandie vers le bas */
+}
+ 
+/* Le bouton "Envoyer le message" */
+.bouton-envoyer {
+    width: 100%;
+    background-color: var(--vert-clair);
+    color: #111;
+    border: none;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 8px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+ 
+.bouton-envoyer:hover {
+    background-color: var(--vert);
+}
+ 
+ 
+/* ============================================
+   PARTIE 12 – COLONNE DROITE (Contact)
+   
+   Les boites : coordonnées, horaires, Google Maps.
+============================================ */
+ 
+/* La colonne droite : boites empilées */
+.colonne-droite {
+    display: flex;
+    flex-direction: column;           /* empilées vers le bas */
+    gap: 16px;
+    flex: 1;                          /* prend tout l'espace restant */
+    min-width: 280px;
+}
+ 
+/* Chaque boite d'information */
+.boite {
+    background-color: var(--gris-fonce);
+    border: 1px solid var(--bordure);
+    padding: 20px;
+    border-radius: 8px;
+}
+ 
+/* Titre de chaque boite */
+.boite h2 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--vert-clair);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+/* Une ligne : carré icône + texte */
+.info-ligne {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+}
+ 
+/* Le carré vert avec l'icône */
+.icone {
+    background-color: #1f3d35;
+    border: 1px solid var(--vert-clair);
+    color: var(--vert-clair);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;                   /* ne rétrécit pas */
+    border-radius: 4px;
+}
+ 
+/* Le texte à côté de l'icône */
+.info-texte strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+ 
+.info-texte p {
+    font-size: 12px;
+    color: var(--gris-texte);
+    margin: 0;
+    line-height: 1.6;
+}
+ 
+/* Une ligne d'horaire : jour à gauche, heure à droite */
+.horaire-ligne {
+    display: flex;
+    justify-content: space-between;   /* un côté gauche, un côté droit */
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+ 
+/* L'heure affichée en vert */
+.horaire-ligne span {
+    color: var(--vert-clair);
+    font-weight: bold;
+}
+ 
+/* La petite icône dans les horaires */
+.icone-horaire {
+    color: var(--vert-clair);
+    margin-right: 6px;
+    font-size: 12px;
+}
+ 
+/* La boite qui contient la carte Google Maps */
+.boite-urgence {
+    border-color: var(--vert-clair);  /* bordure verte */
+    padding: 0;                       /* pas d'espace pour que la carte soit bord à bord */
+    overflow: hidden;                 /* la carte reste dans la boite */
+}
+
+ 
+/* ============================================
+   PARTIE 13 – FOOTER (bas de toutes les pages)
+   
+   4 colonnes côte à côte + ligne de copyright.
+============================================ */
+ 
+/* Le footer entier */
+footer {
+    background-color: #0d0d0d;        /* fond presque noir */
+    padding: 50px 60px 30px;
+    margin-top: 60px;                 /* espace au-dessus du footer */
+}
+ 
+/* Les 4 colonnes côte à côte */
+.colonnes {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;                  /* passe à la ligne sur petit écran */
+}
+ 
+/* Chaque colonne prend le même espace */
+.colonne {
+    flex: 1;
+    min-width: 160px;
+}
+ 
+/* Le texte de description sous le logo dans le footer */
+.description {
+    font-size: 13px;
+    color: var(--gris-texte);
+    line-height: 1.7;
+}
+ 
+/* Les titres des colonnes (Liens Rapides, Nos Services, Contact) */
+.colonne h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: var(--blanc);
+}
+ 
+/* Les listes de liens */
+.colonne ul {
+    list-style: none;                 /* supprime les puces */
+    padding: 0;
+    margin: 0;
+}
+ 
+.colonne ul li {
+    margin-bottom: 10px;
+}
+ 
+/* Les liens dans le footer */
+.colonne ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+ 
+/* Le lien devient vert au survol */
+.colonne ul li a:hover {
+    color: var(--vert-clair);
+}
+ 
+/* Une ligne de contact (icône + texte) */
+.contact-ligne {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #cccccc;
+}
+ 
+/* L'icône verte devant chaque ligne */
+.contact-icone {
+    color: var(--vert-clair);
+    font-size: 15px;
+    width: 16px;
+    text-align: center;
+}
+ 
+/* La ligne de séparation horizontale */
+.separateur {
+    border: none;
+    border-top: 1px solid var(--bordure); /* fine ligne grise */
+    margin-bottom: 16px;
+}
+ 
+/* Le texte copyright tout en bas */
+.footer-bas {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gris-texte);
+}
+
+
+
+
+
+
+
